@@ -1,0 +1,8 @@
+# 生成oracle触发器和序列sql
+def createSEQ_TR(table, id):
+    print('CREATE SEQUENCE SEQ_%s MINVALUE 1  MAXVALUE 999999999999 START WITH 1  INCREMENT BY 1  NOORDER  NOCYCLE;' % (table))
+    print( 'CREATE OR REPLACE TRIGGER TRI_%s BEFORE INSERT ON %s FOR EACH ROW BEGIN SELECT SEQ_%s.NEXTVAL INTO :NEW.%s FROM DUAL;END;' % (
+        table, table, table, id))
+
+
+createSEQ_TR('MEMBER_CARD_TEMPLATE', 'TEMPLATE_ID')
