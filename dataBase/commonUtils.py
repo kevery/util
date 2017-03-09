@@ -5,4 +5,4 @@ def createSEQ_TR(table, id):
         table, table, table, id))
 
 
-createSEQ_TR('MEMBER_CARD_TEMPLATE', 'TEMPLATE_ID')
+createSEQ_TR('REFUND_RECORD', 'REFUND_RECORD_ID')
